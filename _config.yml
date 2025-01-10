@@ -1,36 +1,53 @@
-# Site Settings
-remote_theme: "mmistakes/minimal-mistakes@master"
-minimal_mistakes_skin: "default"
+title: example.com
+description: "Satellite - jekyll blog theme"
+logo_img: "/assets/img/favicon.webp"
+profile_img: "/assets/img/profile.webp"
 
-# Basic Info
-locale: "en-US"
-title: "Croft"
-title_separator: "-"
-description: "Nothing lasts forever!"
-url: "https://croft233.github.io"
-baseurl: ""  # Leave empty if hosted at the repository root
-words_per_minite: 200
+# Social Links
+email: example@gmail.com
+github_username: github
+twitter_username: twitter
+instagram_username: instagram
+linkedin_username: linkedin
+facebook_username: facebook
+
+# External API
+giscus_repo: "byanko55/jekyll-theme-satellite"
+giscus_repoId: "R_kgDOJ6fqWg"
+giscus_category: "Q&A"
+giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
+goatcounter_code: byanko77
+google_analytics:
+
+# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
+# Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
+baseurl:
 
 # Build settings
 plugins:
-  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-loading-lazy
 
-# Exclude from processing
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - docs/
 
-# Deployment
-deploy:
-  type: git
-  repository: git@github.com:Croft233/magician233.github.io.git
-  branch: main
+collections:
+  pages:
+    output: true
+    permalink: /:path.html
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      date: "1900-01-01"
+
+# Markdown newline activator 
+kramdown:
+  input: GFM
+  hard_wrap: true
